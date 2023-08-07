@@ -1,0 +1,36 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Svelte",
+  "description": "Svelte is a platform for building web applications.",
+  "logo": "https://svelte.dev/svelte-logo-horizontal.svg",
+  "screenshots": ["https://svelte.dev/svelte-logo-horizontal.svg"],
+  "tags": [
+    "FRONTEND"
+  ],
+  "version": "3.59.1",
+  "website": "https://svelte.dev/",
+  "repository": "https://github.com/sveltejs/svelte",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [],
+  "volumes": [],
+  "alternatives": [
+    {
+      "name": "Angular",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "Vue",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "React",
+      "license": "open",
+      "available": true
+    }
+  ]
+}

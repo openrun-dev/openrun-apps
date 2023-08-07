@@ -1,0 +1,36 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Angular",
+  "description": "Angular is a platform for building mobile and desktop web applications.",
+  "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
+  "screenshots": ["https://angular.io/assets/images/logos/angular/angular.svg"],
+  "tags": [
+    "FRONTEND"
+  ],
+  "version": "15.0.0",
+  "website": "https://angular.io/",
+  "repository": "https://github.com/angular/angular",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [],
+  "volumes": [],
+  "alternatives": [
+    {
+      "name": "React",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "Vue",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "Svelte",
+      "license": "open",
+      "available": true
+    }
+  ]
+}

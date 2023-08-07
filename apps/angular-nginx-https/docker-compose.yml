@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+
+  jwildernginxproxy:
+    image: jwilder/nginx-proxy
+    container_name: jwildernginxproxy
+    labels:
+      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
+    ports:
+      - "${EXTERNAL_NGINX_PORT}:${NGINX_PORT}"
+      - "${EXTERNAL_NGINX_PORT_HTTPS}:${NGINX_PORT_HTTPS}"
+    volumes:
+      - /or/domains/conf/proxy.conf:/etc/nginx/conf.d/proxy.conf:ro #augment upload body to allow images upload
+      - /or/domains/acme:/etc/acme.sh
+      - /or/domains/certs:/etc/nginx/certs:ro
+      - /or/domains/vhostd:/etc/nginx/vhost.d
+      - /or/domains/html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
+
+  letsencrypt-nginx-proxy-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt-nginx-proxy-companion
+    environment:
+      - NGINX_PROXY_CONTAINER=jwildernginxproxy
+    volumes:
+      - /or/domains/acme:/etc/acme.sh
+      - /or/domains/certs:/etc/nginx/certs
+      - /or/domains/vhostd:/etc/nginx/vhost.d
+      - /or/domains/html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+
+
+  frontend:
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    build:
+      context: .
+      args:
+        - APP_PATH=${APP_PATH}
+        - NGINX_PORT=${NGINX_PORT}
+    env_file:
+      - container.env
+
+
+networks:
+  default:
+    external:
+      name: webproxy

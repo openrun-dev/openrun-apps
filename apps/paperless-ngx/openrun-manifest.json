@@ -1,0 +1,95 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Paperless-ngx",
+  "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+  "logo": "https://docs.paperless-ngx.com/assets/logo.svg",
+  "screenshots": ["https://docs.paperless-ngx.com/assets/screenshots/documents-smallcards.png#only-light"],
+  "tags": [
+    "BACKEND", "FRONTEND"
+  ],
+  "version": "1.16.5",
+  "website": "https://docs.paperless-ngx.com/",
+  "repository": "https://github.com/paperless-ngx/paperless-ngx",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "",
+  "environment-variables": [
+    {
+      "name": "PAPERLESS_URL",
+      "description" : "The URL paperless will be available at.",
+      "default": "http://localhost"
+    },
+    {
+      "name": "PAPERLESS_PORT",
+      "description" : "The port paperless will be available at.",
+      "default": "8000"
+    },
+    {
+      "name": "PAPERLESS_TIME_ZONE",
+      "description": "Paperless requires you to configure the current time zone correctly. Otherwise, the dates of your documents may appear off by one day",
+      "default": "Europe/Rome"
+    },
+    {
+      "name": "PAPERLESS_DATABASE_BACKEND",
+      "description": "Paperless supports three database backends: MariaDB, SQLite and PostgreSQL. The default is SQLite, which is the easiest to set up and requires no additional configuration. If you want to use PostgreSQL, you need to set this environment variable to postgresql.",
+      "default": "postgresql"
+    },
+    {
+      "name": "PAPERLESS_TIKA_ENABLED",
+      "description": "Paperless uses Apache Tika to extract text from documents. If you want to use this feature, you need to set this environment variable to true.",
+      "default": "no"
+    },
+    {
+      "name": "PAPERLESS_OCR_LANGUAGE",
+      "description": "Paperless uses Tesseract to perform OCR on images. If you want to use this feature, you need to set this environment variable to the language you want to use. The default is eng, which is the English language. Available: deu eng fra ita spa",
+      "default": "eng"
+    },
+    {
+      "name": "PAPERLESS_USERMAP_UID",
+      "description": "Paperless runs as the user paperless by default. If you want to run it as a different user, you need to set this environment variable to the UID of the user you want to run it as. 0 is root UID",
+      "default": "0"
+    },
+    {
+      "name": "PAPERLESS_USERMAP_GID",
+      "description": "Paperless runs as the user paperless by default. If you want to run it as a different user, you need to set this environment variable to the GID of the user you want to run it as. 0 is root GID",
+      "default": "0"
+    },
+    {
+      "name": "PAPERLESS_TARGET_FOLDER",
+      "description": "The target folder is used to store the configuration files of paperless",
+      "default": "/paperless-ngx"
+    },
+    {
+      "name": "PAPERLESS_DATA_FOLDER",
+      "description": "The data folder is used to store other data, such as the database of paperless. CAUTION: If specified, you must specify an absolute path starting with / or a relative path starting with ./ here.",
+      "default": ""
+    },
+    {
+      "name": "PAPERLESS_MEDIA_FOLDER",
+      "description": "The media folder is where paperless stores your documents. CAUTION: If specified, you must specify an absolute path starting with / or a relative path starting with ./ here.",
+      "default": ""
+    },
+    {
+      "name": "PAPERLESS_CONSUME_FOLDER",
+      "description": "The consume folder is where paperless looks for new documents to import. CAUTION: If specified, you must specify an absolute path starting with / or a relative path starting with ./ here.",
+      "default": "/paperless-ngx/consume"
+    },
+    {
+      "name": "PAPERLESS_DATABASE_FOLDER",
+      "description": "The database folder, where your database stores its data. Leave empty to have this managed by docker. CAUTION: If specified, you must specify an absolute path starting with / or a relative path starting with ./ here.",
+      "default": ""
+    },
+    {
+      "name": "PAPERLESS_USERNAME",
+      "description": "The username for the admin user",
+      "default": "root"
+    },
+    {
+      "name": "PAPERLESS_PASSWORD",
+      "description": "The password for the admin user",
+      "default": "root"
+    }
+  ],
+  "volumes": []
+}

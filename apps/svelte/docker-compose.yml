@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    env_file:
+      - container.env
+    build:
+      context: .
+      args:
+        - APP_PATH=${APP_PATH}
+        - PORT=${INTERNAL_PORT}
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${EXTERNAL_PORT}:${INTERNAL_PORT}"

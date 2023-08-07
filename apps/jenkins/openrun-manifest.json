@@ -1,0 +1,35 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Jenkins",
+  "description": "Jenkins is a popular open-source tool for automating software development processes.",
+  "logo": "https://www.jenkins.io/images/logos/jenkins/jenkins.svg",
+  "screenshots": [""],
+  "tags": [
+    "CI/CD"
+  ],
+  "version": "18.16.0",
+  "website": "https://nodejs.org/en",
+  "repository": "https://github.com/jenkinsci/jenkins",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "",
+  "environment-variables": [
+    {
+      "name": "JENKINS_EXTERNAL_PORT",
+      "description": "The port that the server will listen on.",
+      "default": 8080
+    },
+    {
+      "name": "JENKINS_EXTERNAL_INBOUND_AGENT_PORT",
+      "description": "The port that the server will listen on, only for inbound jenkins agent which interact with jenkins controller",
+      "default": 50000
+    },
+    {
+      "name": "JENKINS_HOME",
+      "description": "folder to mount into jenkins_data container's folder",
+      "default": "~/jenkins_home"
+    }
+  ],
+  "volumes": []
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Node.js",
+  "description": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+  "logo": "https://nodejs.org/static/images/logo.svg",
+  "screenshots": ["https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg"],
+  "tags": [
+    "BACKEND"
+  ],
+  "version": "18.16.0",
+  "website": "https://nodejs.org/en",
+  "repository": "https://github.com/nodejs/node",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [
+    {
+      "name": "NODE_PORT",
+      "description": "The port that the server will listen on.",
+      "default": 3000
+    },
+    {
+      "name": "NODE_EXTERNAL_PORT",
+      "description": "The external port that maps to the server port.",
+      "default": 3000
+    }
+  ],
+  "volumes": []
+}

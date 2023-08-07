@@ -1,0 +1,23 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Adminer",
+  "description": "Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server. Adminer is available for MySQL, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB.",
+  "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSC90HxwNUbQlf90ApaXOjZiu-SWMF8AEOmc6PFPqyoQ&s",
+  "screenshots": ["https://www.adminer.org/static/screenshots/db.png", "https://www.adminer.org/static/screenshots/select.png"],
+  "tags": [
+    "APPLICATION"
+  ],
+  "version": "4.8.1",
+  "website": "https://angular.io/",
+  "repository": "https://github.com/vrana/adminer",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "",
+  "environment-variables": [{
+    "name": "ADMINER_PORT",
+    "description": "Outbound port for the service",
+    "default": 8080
+  }],
+  "volumes": [],
+  "alternatives": []
+}

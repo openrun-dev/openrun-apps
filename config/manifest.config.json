@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "manifest-version": {
+      "type": "string",
+      "description": "The version of the project or library manifest."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the project or library."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the project or library."
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the project or library logo."
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URL of a screenshot or representative image of the project or library."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["DATABASE" , "CI/CD" , "BACKEND" , "FRONTEND" , "DESIGN" , "ANALYTICS" , "APPLICATION"]
+      },
+      "description": "A list of tags describing the project or library."
+    },
+    "version": {
+      "type": "string",
+      "description": "The current version of the project or library."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the official website for the project or library."
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the source code repository for the project or library."
+    },
+    "package-manager": {
+      "type": "string",
+      "description": "The package manager used to manage the project or library."
+    },
+    "docker-compose-file": {
+      "type": "string",
+      "description": "Name of the Docker Compose file associated with the project or library."
+    },
+    "docker-file": {
+      "type": "string",
+      "description": "Name of the Dockerfile associated with the project or library."
+    },
+    "environment-variables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the environment variable."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the environment variable."
+          },
+          "default": {
+            "type": ["integer", "string", "boolean"],
+            "description": "The default value of the environment variable."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description",
+          "default"
+        ]
+      },
+      "description": "A list of environment variables associated with the project or library."
+    },
+    "volumes": {
+      "type": "array",
+      "description": "A list of volumes associated with the project or library."
+    },
+    "alternatives": {
+      "type": "array",
+      "description": "A list of alternative projects or libraries.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the alternative project or library."
+          },
+          "license": {
+            "type": "string",
+            "description": "The license of the alternative project or library."
+          },
+          "available": {
+            "type": "boolean",
+            "description": "Whether the alternative project or library is available in openrun."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "license",
+          "available"
+        ]
+      }
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "logo",
+    "screenshots",
+    "tags",
+    "version",
+    "website",
+    "repository",
+    "docker-compose-file",
+    "docker-file",
+    "environment-variables",
+    "volumes"
+  ],
+  "additionalProperties": false
+}

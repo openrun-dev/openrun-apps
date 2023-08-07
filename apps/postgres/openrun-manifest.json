@@ -1,0 +1,77 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Postgres",
+  "description": "PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.",
+  "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
+  "screenshots": [""],
+  "tags": ["DATABASE"],
+  "version": "15",
+  "website": "https://www.postgresql.org/",
+  "repository": "https://github.com/postgres/postgres",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [
+    {
+      "name": "POSTGRES_DB",
+      "description": "Postgres db name",
+      "default": "master"
+    },
+    {
+      "name": "POSTGRES_USER",
+      "description": "Postgres db username",
+      "default": "master"
+    },
+    {
+      "name": "POSTGRES_PASSWORD",
+      "description": "Postgres db password",
+      "default": "password"
+    },
+    {
+      "name": "REPLICA_POSTGRES_USER",
+      "description": "Postgres specific user for handling replication",
+      "default": "repuser"
+    },
+    {
+      "name": "REPLICA_POSTGRES_PASSWORD",
+      "description": "password for specific Postgres user for handling replication",
+      "default": "repuser"
+    },
+    {
+      "name": "PGDATA",
+      "description": "path into container used for store postgres data",
+      "default": "/var/lib/postgresql/data"
+    },
+    {
+      "name": "PGPORT",
+      "description": "Postgres container port",
+      "default": 5432
+    },
+    {
+      "name": "HOST_PORT",
+      "description": "Host port",
+      "default": 54320
+    },
+    {
+      "name": "TZ",
+      "description": "timezone",
+      "default": "Europe/Rome"
+    },
+    {
+      "name": "REPLICA_NAME",
+      "description": "Slotname for replication",
+      "default": "replica_1"
+    },
+    {
+      "name": "HOST_BIND_PG_VOLUME",
+      "description": "Folder into host for bind-mounting pgdata",
+      "default": ""
+    },
+    {
+      "name": "HOST_BIND_PG_BACKUP",
+      "description": "Folder into host for bind-mounting backup folder",
+      "default": ""
+    }
+  ],
+  "volumes": ["/var/lib/postgresql/data", "/var/lib/postgresql/backup"]
+}

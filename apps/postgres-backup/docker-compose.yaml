@@ -1,0 +1,15 @@
+services:
+  backup:
+      build: .
+      tty: true #for keep alive container
+      container_name: backupnode
+      restart: always
+      env_file:
+        - .env
+      ports:
+        - ${PORT}:5432
+      environment:
+        TZ: ${TZ}
+      volumes:
+        - ${BACKUP_VOLUME}:/backup_data
+      

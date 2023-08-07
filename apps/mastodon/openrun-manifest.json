@@ -1,0 +1,214 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Mastodon",
+  "description": "Mastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones.",
+  "logo": "https://joinmastodon.org/logos/logo-purple.svg",
+  "screenshots": ["https://joinmastodon.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fios_android_apps.d1ca578d.png&w=1080&q=75"],
+  "tags": ["APPLICATION"],
+  "version": "4.1.4-ls42",
+  "website": "https://joinmastodon.org/it/apps",
+  "repository": "https://github.com/linuxserver/docker-mastodon",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "",
+  "environment-variables": [
+    {
+      "name": "PORT_HTTP",
+      "description": "Port for frontend HTTP",
+      "default": 80
+    },
+    {
+      "name": "PORT_HTTPS",
+      "description": "Port for frontend HTTPS",
+      "default": 443
+    },
+    {
+      "name": "PUID",
+      "description": "UserId for user running the container",
+      "default": 1000
+    },
+    {
+      "name": "PGID",
+      "description": "GroupId for user running the container",
+      "default": 1000
+    },
+    {
+      "name": "TZ",
+      "description": "Simply Timezone",
+      "default": "Etc/UTC"
+    },
+    {
+      "name": "LOCAL_DOMAIN",
+      "description": "Unique identifier of server. It cannot be safely changed later",
+      "default": "example.com"
+    },
+    {
+      "name": "REDIS_HOST",
+      "description": "Mastodon redis db server hostname",
+      "default": "redis"
+    },
+    {
+      "name": "REDIS_PORT",
+      "description": "Mastodon redis db port",
+      "default": 6379
+    },
+    {
+      "name": "POSTGRES_DB_HOST",
+      "description": "Postgres db hostname",
+      "default": "db"
+    },
+    {
+      "name": "POSTGRES_DB_USER",
+      "description": "Postgres db username",
+      "default": "mastodon"
+    },
+    {
+      "name": "POSTGRES_DB_PASSWORD",
+      "description": "Postgres db user password",
+      "default": "mastodon"
+    },
+    {
+      "name": "POSTGRES_DB_NAME",
+      "description": "Postgres db name",
+      "default": "mastodon"
+    },
+    {
+      "name": "POSTGRES_DB_PORT",
+      "description": "Postgres db port",
+      "default": 5432
+    },
+    {
+      "name": "ES_ENABLED",
+      "description": "Enable or disable Elastic Search",
+      "default": false
+    },
+    {
+      "name": "SECRET_KEY_BASE",
+      "description": "session secret key, used for encrypting cookies. Changing it will break all active browser sessions. Generated with Rake (See Ruby on Rails)",
+      "default": "#to_generate"
+    },
+    {
+      "name": "OTP_SECRET",
+      "description": "used for MFA (two factor) authentication. Changing it will break two-factor authentication. Generate with rake secret",
+      "default": "#to_generate"
+    },
+    {
+      "name": "VAPID_PRIVATE_KEY",
+      "description": "Push notification private key. Changing it will break push notifications.",
+      "default": "#to_generate"
+    },
+    {
+      "name": "VAPID_PRIVATE_KEY",
+      "description": "Push notification public key. Changing it will break push notifications.",
+      "default": "#to_generate"
+    },
+    {
+      "name": "SMTP_SERVER",
+      "description": "SMTP Server for email notifications",
+      "default": "mail.example.com"
+    },
+    {
+      "name": "SMTP_PORT",
+      "description": "SMTP Server port",
+      "default": 25
+    },
+    {
+      "name": "SMTP_LOGIN",
+      "description": "SMTP Server username",
+      "default": 25
+    },
+    {
+      "name": "SMTP_PASSWORD",
+      "description": "SMTP Server password",
+      "default": 25
+    },
+    {
+      "name": "SMTP_FROM_ADDRESS",
+      "description": "From address for emails send from Mastodon",
+      "default": "notifications@example.com"
+    },
+    {
+      "name": "S3_ENABLED",
+      "description": "Enable or disable s3 storage of uploaded files",
+      "default": false
+    },
+    {
+      "name": "AWS_ACCESS_KEY_ID",
+      "description": "S3 bucket access key ID",
+      "default": ""
+    },
+    {
+      "name": "AWS_SECRET_ACCESS_KEY_ID",
+      "description": "S3 bucket secret access key",
+      "default": ""
+    },
+    {
+      "name": "S3_BUCKET",
+      "description": "S3 bucket name",
+      "default": ""
+    },
+    {
+      "name": "S3_ALIAS_HOST",
+      "description": "Alternate hostname for object fetching if you are front the S3 connections",
+      "default": ""
+    },
+    {
+      "name": "WEB_DOMAIN",
+      "description": "This can be set if you want your server identifier to be different to the subdomain hosting Mastodon",
+      "default": "mastodon.example.com"
+    },
+    {
+      "name": "ES_HOST",
+      "description": "Elasticsearch server hostname",
+      "default": "es"
+    },
+    {
+      "name": "ES_PORT",
+      "description": "Elasticsearch server port",
+      "default": 9200
+    },
+    {
+      "name": "ES_USER",
+      "description": "Elasticsearch username",
+      "default": "elastic"
+    },
+    {
+      "name": "ES_PASS",
+      "description": "Elasticsearch password",
+      "default": "elastic"
+    },
+    {
+      "name": "SIDEKIQ_ONLY",
+      "description": "Only run the sidekiq service in this container instance. For large scale instances that need better queue handling.Only run the sidekiq service in this container instance. For large scale instances that need better queue handling.",
+      "default": false
+    },
+    {
+      "name": "SIDEKIQ_QUEUE",
+      "description": "The name of the sidekiq queue to run in this container",
+      "default": ""
+    },
+    {
+      "name": "SIDEKIQ_DEFAULT",
+      "description": "Set to true on the main container if you're running additional sidekiq instances. It will run the default queue.",
+      "default": false
+    },
+    {
+      "name": "SIDEKIQ_THREADS",
+      "description": "The number of threads for sidekiq to use",
+      "default": 5
+    },
+    {
+      "name": "DB_POOL",
+      "description": "The size of the DB connection pool, must be at least the same as SIDEKIQ_THREADS",
+      "default": 5
+    },
+    {
+      "name": "CONFIG_VOLUME_PATH",
+      "description": "Bind mount /config container volume",
+      "default": 5
+    }
+  ],
+  "volumes": [
+    "/config"
+  ]
+}

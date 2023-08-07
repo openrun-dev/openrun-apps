@@ -1,0 +1,47 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Angular-nginx",
+  "description": "Angular is a platform for building mobile and desktop web applications. Provided on https with nginx",
+  "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
+  "screenshots": ["https://angular.io/assets/images/logos/angular/angular.svg"],
+  "tags": [
+    "FRONTEND"
+  ],
+  "version": "15.0.0",
+  "website": "https://angular.io/",
+  "repository": "https://github.com/angular/angular",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [
+    {
+      "name": "NGINX_PORT",
+      "description": "The port that the NGINX server will listen on.",
+      "default": 80
+    },
+    {
+      "name": "NGINX_EXTERNAL_PORT",
+      "description": "The external port that maps to the NGINX_PORT.",
+      "default": 80
+    }
+  ],
+  "volumes": [],
+  "alternatives": [
+    {
+      "name": "react",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "vue",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "svelte",
+      "license": "open",
+      "available": true
+    }
+  ]
+}

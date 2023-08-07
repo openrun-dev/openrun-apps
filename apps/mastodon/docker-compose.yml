@@ -1,0 +1,13 @@
+version: "2.1"
+services:
+  mastodon:
+    image: lscr.io/linuxserver/mastodon:latest
+    container_name: mastodon
+    env_file:
+      - .env
+    volumes:
+      - ${CONFIG_VOLUME_MOUNT}:/config
+    ports:
+      - ${PORT_HTTP}:80
+      - ${PORT_HTTPS}:443
+    restart: unless-stopped

@@ -1,0 +1,82 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "WireGuard Easy",
+  "description": "You have found the easiest way to install & manage WireGuard on any Linux host. WireGuard is an extremely simple, fast VPN that uses state-of-the-art cryptography. It aims to be faster, simpler, leaner and more useful than IPsec, and more performant than OpenVPN.",
+  "logo": "https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/Wireguard-4ajT-svg-LHjA-hne2.png",
+  "screenshots": ["https://github.com/wg-easy/wg-easy/blob/master/assets/screenshot.png?raw=true"],
+  "tags": [
+    "APPLICATION"
+  ],
+  "version": "7.0",
+  "website": "https://hub.docker.com/r/weejewel/wg-easy",
+  "repository": "https://github.com/wg-easy/wg-easy",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "",
+  "environment-variables": [
+    {
+      "name": "WG_ADMIN_PASSWORD",
+      "description": "When set, requires a password when logging in to the Web UI.",
+      "default": "ADMIN"
+    },
+    {
+      "name": "WG_SERVER_IP",
+      "description": "The public hostname of your VPN server.",
+      "default": ""
+    },
+    {
+      "name": "WG_DEVICE",
+      "description": "Ethernet device the wireguard traffic should be forwarded through.",
+      "default": "eth0"
+    },
+    {
+      "name": "WG_PORT",
+      "description": "The public UDP port of your VPN server. WireGuard will always listen on 51820 inside the Docker container",
+      "default": 51820
+    },
+    {
+      "name": "WG_MTU",
+      "description": "The MTU the clients will use. Server uses default WG MTU.",
+      "default": "null"
+    },
+    {
+      "name": "WG_PERSISTENT_KEEPALIVE",
+      "description": "Value in seconds to keep the 'connection' open. If this value is 0, then connections won't be kept alive.",
+      "default": 0
+    },
+    {
+      "name": "WG_DEFAULT_ADDRESS",
+      "description": "Clients IP address range.",
+      "default": "10.8.0.x"
+    },
+    {
+      "name": "WG_DEFAULT_DNS",
+      "description": "DNS server clients will use.",
+      "default": "1.1.1.1"
+    },
+    {
+      "name": "WG_ALLOWED_IPS",
+      "description": "Allowed IPs clients will use.",
+      "default": "0.0.0.0/0, ::/0"
+    },
+    {
+      "name": "WG_PRE_UP",
+      "description": "",
+      "default": ""
+    },{
+      "name": "WG_POST_UP",
+      "description": "",
+      "default": ""
+    },{
+      "name": "WG_PRE_DOWN",
+      "description": "",
+      "default": ""
+    },{
+      "name": "WG_POST_DOWN",
+      "description": "",
+      "default": ""
+    }
+  ],
+  "volumes": []
+}

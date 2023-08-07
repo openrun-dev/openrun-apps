@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+
+  db_master:
+    build: .
+    container_name: masternode
+    restart: always
+    healthcheck:
+      test: [ “CMD-SHELL”, “pg_isready” ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    env_file:
+      - master.env
+    environment:
+      TZ: ${TZ}
+    ports:
+      - ${HOST_PORT}:${PGPORT}
+    volumes:
+      - ${HOST_BIND_PG_VOLUME}:/var/lib/postgresql/data
+      - ${HOST_BIND_PG_BACKUP}:/var/lib/postgresql/backup

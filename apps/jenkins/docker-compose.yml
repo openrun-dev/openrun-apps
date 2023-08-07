@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - ${JENKINS_EXTERNAL_PORT}:8080
+      - ${JENKINS_EXTERNAL_INBOUND_AGENT_PORT}:50000
+    container_name: jenkins-lts
+    volumes:
+      - ${JENKINS_HOME}:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker

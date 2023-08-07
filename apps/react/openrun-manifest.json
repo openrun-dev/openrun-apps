@@ -1,0 +1,36 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "React",
+  "description": "React is a platform for building web applications.",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+  "screenshots": [""],
+  "tags": [
+    "FRONTEND"
+  ],
+  "version": "18.2.0",
+  "website": "https://reactjs.org/",
+  "repository": "https://github.com/facebook/react/",
+  "package-manager": "pnpm",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [],
+  "volumes": [],
+  "alternatives": [
+    {
+      "name": "Angular",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "Vue",
+      "license": "open",
+      "available": true
+    },
+    {
+      "name": "Svelte",
+      "license": "open",
+      "available": true
+    }
+  ]
+}

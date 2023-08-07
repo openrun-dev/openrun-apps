@@ -1,0 +1,107 @@
+{
+  "$schema": "../../config/manifest.config.json",
+  "manifest-version": "1.0.0",
+  "name": "Postgres-backup",
+  "description": "A simple, but powerful, tool for backup your postgres instance and upload into object-storage cloud (S3-API only)",
+  "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
+  "screenshots": [""],
+  "tags": ["DATABASE"],
+  "version": "1.0",
+  "website": "",
+  "repository": "https://github.com/postgres/postgres#TO_CHANGE",
+  "docker-compose-file": "docker-compose.yml",
+  "docker-file": "Dockerfile",
+  "environment-variables": [
+    {
+      "name": "MASTER_IP",
+      "description": "IP of postgres instance",
+      "default": ""
+    },
+    {
+      "name": "BACKUP_FOLDER",
+      "description": "Where to store into container, temporally, backups",
+      "default": "/backup_data"
+    },
+    {
+      "name": "DUMP_SCHEDULING",
+      "description": "Cron scheduling: 15min | hourly | daily | weekly | monthly | custom",
+      "default": "daily"
+    },
+    {
+      "name": "CUSTOM_CRON_EXPRESSION",
+      "description": "If dump scheduling 'custom'. explicit cron expression",
+      "default": "* * 1 * *"
+    },
+    {
+      "name": "DUMPALL",
+      "description": "Choose if dump all postgres db into instance ('on') or a specific db ('off') (specified by POSTGRES_DB var)",
+      "default": "off"
+    },
+    {
+      "name": "PG_PORT",
+      "description": "db listening port",
+      "default": 5432
+    },
+    {
+      "name": "DUMP_OUTPUT_FORMAT",
+      "description": "If dumpall is off, this var is define if save dump in custom format (only with pg_restore is possibile to restore data) or in a plain sql file",
+      "default": "custom"
+    },
+    {
+      "name": "POSTGRES_USER",
+      "description": "owner of the db",
+      "default": "admin"
+    },
+    {
+      "name": "POSTGRES_PASSWORD",
+      "description": "owner's password of the db",
+      "default": ""
+    },
+    {
+      "name": "POSTGRES_DB",
+      "description": "If dumpall is off, specify db to dump",
+      "default": ""
+    },
+    {
+      "name": "PORT",
+      "description": "exposed port",
+      "default": "54333"
+    },
+    {
+      "name": "BACKUP_VOLUME",
+      "description": "Bind-mounted volume into container",
+      "default": ""
+    },
+    {
+      "name": "TZ",
+      "description": "timezone",
+      "default": "Europe/Rome"
+    },
+    {
+      "name": "AWS_ACCESS_KEY_ID",
+      "description": "AWS access key for upload into s3 object storage",
+      "default": ""
+    },
+    {
+      "name": "AWS_SECRET_ACCESS_KEY",
+      "description": "AWS secret access key for upload into s3 object storage",
+      "default": ""
+    },
+    {
+      "name": "BUCKET_REGION",
+      "description": "AWS region",
+      "default": ""
+    },
+    {
+      "name": "BUCKET_NAME",
+      "description": "Name of the S3 bucket to use for backups storage",
+      "default": ""
+    },
+    {
+      "name": "BUCKET_ENDPOINT",
+      "description": "AWS bucket endpoint. Use it only if bucket provider is not Amazon",
+      "default": ""
+    }
+  ],
+  "volumes": ["/backup_data"]
+}
