@@ -2,6 +2,7 @@
   "$schema": "../../config/manifest.config.json",
   "manifest-version": "1.0.0",
   "name": "Angular-nginx",
+  "identifier": "angular-nginx",
   "description": "Angular is a platform for building mobile and desktop web applications. Provided on https with nginx",
   "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
   "screenshots": ["https://angular.io/assets/images/logos/angular/angular.svg"],

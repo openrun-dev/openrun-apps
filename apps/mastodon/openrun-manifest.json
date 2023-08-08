@@ -2,6 +2,7 @@
   "$schema": "../../config/manifest.config.json",
   "manifest-version": "1.0.0",
   "name": "Mastodon",
+  "identifier": "mastodon",
   "description": "Mastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones.",
   "logo": "https://joinmastodon.org/logos/logo-purple.svg",
   "screenshots": ["https://joinmastodon.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fios_android_apps.d1ca578d.png&w=1080&q=75"],

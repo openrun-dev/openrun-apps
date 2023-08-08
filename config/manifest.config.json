@@ -14,6 +14,10 @@
       "type": "string",
       "description": "The name of the project or library."
     },
+    "identifier": {
+      "type": "string",
+      "description": "The identifier of the project or library."
+    },
     "description": {
       "type": "string",
       "description": "A brief description of the project or library."

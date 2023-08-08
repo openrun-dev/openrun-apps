@@ -2,6 +2,7 @@
   "$schema": "../../config/manifest.config.json",
   "manifest-version": "1.0.0",
   "name": "Postgres-replica",
+  "identifier": "postgres-replica",
   "description": "PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.",
   "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
   "screenshots": [""],

@@ -2,6 +2,7 @@
   "$schema": "../../config/manifest.config.json",
   "manifest-version": "1.0.0",
   "name": "Postgres-backup",
+  "identifier": "postgres-backup",
   "description": "A simple, but powerful, tool for backup your postgres instance and upload into object-storage cloud (S3-API only)",
   "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
   "screenshots": [""],

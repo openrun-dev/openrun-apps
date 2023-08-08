@@ -2,6 +2,7 @@
   "$schema": "../../config/manifest.config.json",
   "manifest-version": "1.0.0",
   "name": "Jenkins",
+  "identifier": "jenkins",
   "description": "Jenkins is a popular open-source tool for automating software development processes.",
   "logo": "https://www.jenkins.io/images/logos/jenkins/jenkins.svg",
   "screenshots": [""],

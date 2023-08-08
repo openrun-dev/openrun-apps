@@ -2,6 +2,7 @@
   "$schema": "../../config/manifest.config.json",
   "manifest-version": "1.0.0",
   "name": "Paperless-ngx",
+  "identifier": "paperless-ngx",
   "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
   "logo": "https://docs.paperless-ngx.com/assets/logo.svg",
   "screenshots": ["https://docs.paperless-ngx.com/assets/screenshots/documents-smallcards.png#only-light"],
